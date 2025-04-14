@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>model - update &#129497</title>
+    <style>
+        body {
+            max-width: 600px;
+            margin: 50px auto;
+            text-align: center;
+            background-color: #d3d3d3;
+            font-family: "Courier New", monospace;
+        }
+        .form-container {
+            gap: 10px;
+            display: flex;
+            flex-direction: column;
+        }
+        input[type="date"] {
+            padding: 8px;
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+        button {
+            border: none;
+            padding: 10px;
+            color: white;
+            cursor: pointer;
+            font-size: 18px;
+            margin-top: 18px;
+            border-radius: 5px;
+            font-weight: bold;
+            background-color: #8b5cc9;
+            font-family: "Courier New", monospace;
+        }
+        button:hover {
+            background-color: #975fff;
+        }
+        #response {
+            color: #333;
+            margin-top: 20px;
+            font-weight: bold;
+        }
+        .back-link {
+            margin-top: 5px;
+            color: #000000;
+            display: inline-block;
+            text-decoration: underline #000000;
+        }
+    </style>
+</head>
+<body>
+    <h1>update model &#128260;</h1>
+    <div class="form-container">
+        <label for="start_date"><strong><br>start date:</strong></label>
+        <input type="date" id="start_date" name="start_date" required>
+        <label for="end_date"><strong>end date:</strong></label>
+        <input type="date" id="end_date" name="end_date" required>
+        <button onclick="updateModel()">update model</button>
+    </div>
+    <div id="response"></div>
+    <a style="font-size: large;" href="/" class="back-link">back to home</Back></a>
+    <script>
+        async function updateModel() {
+            const startDate = document.getElementById("start_date").value;
+            const endDate = document.getElementById("end_date").value;
+            const responseDiv = document.getElementById("response");
+            responseDiv.textContent = "Updating model...";
+            try {
+                const response = await fetch("/update", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({ start_date: startDate, end_date: endDate })
+                });
+                const result = await response.json();
+                if (response.ok) {
+                    responseDiv.textContent = result.message;
+                } else {
+                    responseDiv.textContent = `Error: ${result.detail}`;
+                }
+            } catch (error) {
+                responseDiv.textContent = `Error: ${error.message}`;
+            }
+        }
+    </script>
+</body>
+</html>

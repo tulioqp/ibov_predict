@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>model - predict &#129497</title>
+    <style>
+        body {
+            font-family: "Courier New", monospace;
+            max-width: 600px;
+            margin: 50px auto;
+            text-align: center;
+            background-color: #d3d3d3;
+        }
+        .form-container {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        input[type="number"] {
+            padding: 8px;
+            font-size: 16px;
+            width: 100px;
+            margin: 0 auto;
+        }
+        button {
+            border: none;
+            padding: 10px;
+            color: white;
+            cursor: pointer;
+            font-size: 18px;
+            margin-top: 30px;
+            border-radius: 5px;
+            font-weight: bold;
+            background-color: #8b5cc9;
+            font-family: "Courier New", monospace;
+        }
+        button:hover {
+            background-color: #975fff;
+        }
+        #response {
+            color: #333;
+            margin-top: 20px;
+            font-weight: bold;
+        }
+        .back-link {
+            margin-top: 5px;
+            color: #000000;
+            display: inline-block;
+            text-decoration: underline #000000;
+        }
+    </style>
+</head>
+<body>
+    <h1>prediction &#129497</h1>
+    <div class="form-container">
+        <label for="days"><br>days to predict:</label>
+        <input type="number" id="days" name="days" min="1" value="1" required>
+        <button onclick="makePrediction()">predict</button>
+    </div>
+    <div id="response"></div>
+    <a href="/" class="back-link">back to home</a>
+    <script>
+        async function makePrediction() {
+            const days = document.getElementById("days").value;
+            const responseDiv = document.getElementById("response");
+            responseDiv.textContent = "Fetching prediction...";
+            try {
+                const response = await fetch(`/predict/api?days=${days}`);
+                const result = await response.json();
+                if (response.ok) {
+                    responseDiv.textContent = `Prediction for ${result.date}: ${result.prediction.toFixed(2)}`;
+                } else {
+                    responseDiv.textContent = `Error: ${result.detail}`;
+                }
+            } catch (error) {
+                responseDiv.textContent = `Error: ${error.message}`;
+            }
+        }
+    </script>
+</body>
+</html>
