@@ -17,15 +17,15 @@ you can:
 
 **links**  
 
-- code: [github](https://github.com/tulioqp/ibov-prediction)  
+- code: [github](https://github.com/tulioqp/ibov_predict)  
 - data source: [yahoo finance](https://finance.yahoo.com/)
-- deployed version: coming soon on aws
+- deployed version: coming soon on aws<br>
 (currently running at: [ibov-wizard](https://8a45-189-69-200-177.ngrok-free.app/)) 
 
 <br><br>
 
-**disclaimer**
-this is a very simple model for mlops/deployment studies :books:, not a financial recommendation :money_with_wings:	.<br>do not use it for investment decisions! :skull_and_crossbones:
+**disclaimer:**
+this is a very simple model for mlops/deployment studies :books:, not a financial recommendation. :money_with_wings: <br>do not use it for investment decisions! :skull_and_crossbones:
 
 
 
