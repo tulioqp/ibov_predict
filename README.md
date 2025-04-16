@@ -1,6 +1,6 @@
 **hi there!**
 
-welcome to <br>**`ibov prediction api_ :mage:`**</br>a small project to practice deploying models, exploring a time series forecasting with the bovespa index.
+welcome to <br>**`ibov prediction api`** :mage:</br>a small project to practice deploying models, exploring a time series forecasting with the bovespa index.
 
 ---
 
