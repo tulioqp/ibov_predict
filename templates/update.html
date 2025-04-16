@@ -48,6 +48,15 @@
             display: inline-block;
             text-decoration: underline #000000;
         }
+        .github-icon {
+            position: fixed;
+            bottom: 10px;
+            right: 10px;
+        }
+        .github-icon img {
+            width: 32px;
+            height: 32px;
+        }
     </style>
 </head>
 <body>
@@ -60,7 +69,10 @@
         <button onclick="updateModel()">update model</button>
     </div>
     <div id="response"></div>
-    <a style="font-size: large;" href="/" class="back-link">back to home</Back></a>
+    <a style="font-size: large;" href="/" class="back-link">back to home</a>
+    <a href="https://github.com/tulioqp/ibov_predict" class="github-icon">
+        <img src="https://github.com/favicon.ico" alt="GitHub Repository">
+    </a>
     <script>
         async function updateModel() {
             const startDate = document.getElementById("start_date").value;

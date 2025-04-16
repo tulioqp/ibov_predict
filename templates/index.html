@@ -18,7 +18,7 @@
             margin-top: 20px;
             flex-direction: column;
         }
-        a {
+        a.button {
             border: none;
             padding: 10px;
             color: white;
@@ -31,8 +31,17 @@
             background-color: #8b5cc9;
             font-family: "Courier New", monospace;
         }
-        a:hover {
+        a.button:hover {
             background-color: #975fff;
+        }
+        .github-icon {
+            position: fixed;
+            bottom: 10px;
+            right: 10px;
+        }
+        .github-icon img {
+            width: 32px;
+            height: 32px;
         }
     </style>
 </head>
@@ -40,8 +49,11 @@
     <h1>IBOV Prediction &#129497</h1>
     <p style="font-size:larger;"><strong><br>Welcome to the IBOV Prediction API!</strong><br><br><br> Use the buttons below to update the model or make predictions.<br></p>
     <div class="button-container">
-        <a href="/update">update model</a>
-        <a href="/predict">predict</a>
+        <a href="/update" class="button">update model</a>
+        <a href="/predict" class="button">predict</a>
     </div>
+    <a href="https://github.com/tulioqp/ibov_predict" class="github-icon">
+        <img src="https://github.com/favicon.ico" alt="GitHub Repository">
+    </a>
 </body>
 </html>
