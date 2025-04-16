@@ -11,9 +11,8 @@ the backend runs on **fastapi**, with simple **jinja2** html pages for interacti
 you can:
 - 🛠️ train the model with your chosen date ranges
 - 📈 predict ibov values for 1 or more days ahead
-<br>
+
 ---
-<br>
 
 **links**  
 
