@@ -6,22 +6,22 @@
     <title>model - predict &#129497</title>
     <style>
         body {
-            font-family: "Courier New", monospace;
             max-width: 600px;
             margin: 50px auto;
             text-align: center;
             background-color: #d3d3d3;
+            font-family: "Courier New", monospace;
         }
         .form-container {
+            gap: 10px;
             display: flex;
             flex-direction: column;
-            gap: 10px;
         }
         input[type="number"] {
             padding: 8px;
-            font-size: 16px;
             width: 100px;
             margin: 0 auto;
+            font-size: 16px;
         }
         button {
             border: none;
@@ -50,9 +50,9 @@
             text-decoration: underline #000000;
         }
         .github-icon {
-            position: fixed;
-            bottom: 10px;
             right: 10px;
+            bottom: 10px;
+            position: fixed;
         }
         .github-icon img {
             width: 32px;
@@ -81,7 +81,7 @@
                 const response = await fetch(`/predict/api?days=${days}`);
                 const result = await response.json();
                 if (response.ok) {
-                    responseDiv.textContent = `Prediction for ${result.date}: ${result.prediction.toFixed(2)}`;
+                    responseDiv.textContent = `Prediction for ${result.date}: R$ ${result.prediction.toFixed(2)}`;
                 } else {
                     responseDiv.textContent = `Error: ${result.detail}`;
                 }

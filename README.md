@@ -19,8 +19,7 @@ you can:
 
 - code: [github](https://github.com/tulioqp/ibov_predict)  
 - data source: [yahoo finance](https://finance.yahoo.com/)
-- deployed version: coming soon on aws<br>
-(currently running at: [ibov-wizard](https://8a45-189-69-200-177.ngrok-free.app/)) 
+- deployed version: [ibov-wizard](http://100.26.208.105:8000/)
 
 <br><br>
 
